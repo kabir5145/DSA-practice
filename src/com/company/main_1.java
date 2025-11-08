@@ -78,5 +78,6 @@ public class main_1 {
         m.insertLast_1(1000);
         m.display();
         System.out.println("The Length is : "+m.length_list());
+
     }
 }
