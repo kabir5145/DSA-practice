@@ -39,6 +39,20 @@ public class main_1 {
         newNode.next = head;
         head = newNode;
     }
+
+    //Inserting elements at the end of singly linked list
+    public void insertLast_1(int value){
+        Node newNode = new Node(value);
+        if(head == null){
+            head = newNode;
+            return;
+        }
+        Node current = head;
+        while (null != current.next){
+            current = current.next;
+        }
+        current.next = newNode;
+    }
     public static void main(String[] args) {
         main_1 m = new main_1();
         m.head = new Node(1);
@@ -58,5 +72,11 @@ public class main_1 {
         //Inserting node in the first of singly linked list
         m.insertFirst_1(100);
         m.display();
+        System.out.println("The Length is : "+m.length_list());
+
+        //Inserting node in the last of singly linked list
+        m.insertLast_1(1000);
+        m.display();
+        System.out.println("The Length is : "+m.length_list());
     }
 }
