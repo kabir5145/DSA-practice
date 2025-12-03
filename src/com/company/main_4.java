@@ -22,6 +22,21 @@ public class main_4 {
         }
         System.out.println("Null");
     }
+
+    //Finding the length of the singly linked list
+
+    public int findLength(){
+        if(head == null){
+            return 0;
+        }
+        ListNode current = head;
+        int count = 0;
+        while (current != null){
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
     public static void main(String[] args) {
         main_4 m = new main_4();
         m.head = new ListNode(1);
@@ -35,5 +50,6 @@ public class main_4 {
         b.next = c;
 
         m.printList();
+        System.out.println("The length of this singly linked list is : "+m.findLength());
     }
 }
