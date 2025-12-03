@@ -45,6 +45,20 @@ public class main_4 {
         head = newNode;
         return newNode;
     }
+
+    //Inserting the node at the end of the singly linked list
+    public void insertNodeAtEnd(int value){
+        ListNode newNode = new ListNode(value);
+        if(head == null){
+            head = newNode;
+            return;
+        }
+        ListNode current = head;
+        while (null != current.next){
+            current = current.next;
+        }
+        current.next = newNode;
+    }
     public static void main(String[] args) {
         main_4 m = new main_4();
         m.head = new ListNode(1);
@@ -62,6 +76,10 @@ public class main_4 {
 
         //Inserting a node at the beginning of singly linked list
         m.insertNodeAtFirst(199);
+        m.printList();
+
+        //Inserting a node at the end of the singly linked list
+        m.insertNodeAtEnd(200);
         m.printList();
     }
 }
