@@ -37,6 +37,14 @@ public class main_4 {
         }
         return count;
     }
+
+    //Inserting the node at the beginning of the singly linked list
+    public ListNode insertNodeAtFirst(int value){
+        ListNode newNode = new ListNode(value);
+        newNode.next = head;
+        head = newNode;
+        return newNode;
+    }
     public static void main(String[] args) {
         main_4 m = new main_4();
         m.head = new ListNode(1);
@@ -51,5 +59,9 @@ public class main_4 {
 
         m.printList();
         System.out.println("The length of this singly linked list is : "+m.findLength());
+
+        //Inserting a node at the beginning of singly linked list
+        m.insertNodeAtFirst(199);
+        m.printList();
     }
 }
