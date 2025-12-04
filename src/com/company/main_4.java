@@ -59,6 +59,30 @@ public class main_4 {
         }
         current.next = newNode;
     }
+
+    //Search an element in singly linked list
+    public boolean searchElement(int searchKey){
+        ListNode current = head;
+        while (current != null){
+            if(current.data == searchKey){
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+
+    //Finding the middle number in the singly linked list
+    public void findMiddleNum(){
+        ListNode fastPtr = head;
+        ListNode slowPtr = head;
+        while (fastPtr != null && fastPtr.next != null ){
+            slowPtr = slowPtr.next;
+            fastPtr = fastPtr.next.next;
+        }
+        System.out.println("The middle node is : "+slowPtr.data);
+    }
+
     public static void main(String[] args) {
         main_4 m = new main_4();
         m.head = new ListNode(1);
@@ -81,5 +105,13 @@ public class main_4 {
         //Inserting a node at the end of the singly linked list
         m.insertNodeAtEnd(200);
         m.printList();
+
+        //Searching an element in singly linked list
+        System.out.println(m.searchElement(3));
+
+        //Finding the middle node in the singly linked list
+        m.insertNodeAtFirst(1000);
+        m.printList();
+        m.findMiddleNum();
     }
 }
