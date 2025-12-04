@@ -83,6 +83,19 @@ public class main_4 {
         System.out.println("The middle node is : "+slowPtr.data);
     }
 
+    //Reversing the singly linked list
+    public void reverse(){
+        ListNode current = head;
+        ListNode previous = null;
+        ListNode next = null;
+        while (current != null){
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        head = previous;
+    }
     public static void main(String[] args) {
         main_4 m = new main_4();
         m.head = new ListNode(1);
@@ -113,5 +126,9 @@ public class main_4 {
         m.insertNodeAtFirst(1000);
         m.printList();
         m.findMiddleNum();
+
+        //Reversing the singly linked list
+        m.reverse();
+        m.printList();
     }
 }
