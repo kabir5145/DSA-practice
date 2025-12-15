@@ -63,6 +63,17 @@ public class main_6 {
         }
         System.out.println("The length of the singly linked list is : "+count);
     }
+
+    //Deleting first Node in singly linked list
+    public ListNode deleteFirstNode(){
+        if(head == null) {
+            return null;
+        }
+        ListNode temp = head;
+        head = head.next;
+        temp.next = null;
+        return temp;
+    }
     public static void main(String[] args) {
         main_6 obj = new main_6();
         obj.head = new ListNode(1);
@@ -83,5 +94,9 @@ public class main_6 {
 
         //Finding the length of singly linked list
         obj.findLength();
+
+        //Deleting the first node of singly linked list
+        obj.deleteFirstNode();
+        obj.printLL();
     }
 }
