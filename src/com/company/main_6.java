@@ -74,6 +74,26 @@ public class main_6 {
         temp.next = null;
         return temp;
     }
+
+    //Inserting a node in a singly linked list at given position
+    public ListNode insert(int data , int position) {
+        ListNode node = new ListNode(data);
+       if(position == 1){
+           node.next = head;
+           head = node;
+       }else{
+           ListNode previous = head;
+           int count = 1;
+           while (count < position -1 ) {
+               previous = previous.next;
+               count++;
+           }
+           ListNode current = previous.next;
+           node.next = current;
+           previous.next = node;
+       }
+       return node;
+    }
     public static void main(String[] args) {
         main_6 obj = new main_6();
         obj.head = new ListNode(1);
@@ -97,6 +117,10 @@ public class main_6 {
 
         //Deleting the first node of singly linked list
         obj.deleteFirstNode();
+        obj.printLL();
+
+        //Inserting a node at the given position
+        obj.insert(200,3);
         obj.printLL();
     }
 }
