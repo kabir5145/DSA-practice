@@ -94,6 +94,22 @@ public class main_6 {
        }
        return node;
     }
+
+    //Deleting middle node of singly linked list
+    public ListNode deleteMiddleNode() {
+        if (head == null || head.next == null) {
+            return null;
+        }
+        ListNode slow = head;
+        ListNode fast = head.next.next;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        slow.next = slow.next.next;
+        return head;
+    }
     public static void main(String[] args) {
         main_6 obj = new main_6();
         obj.head = new ListNode(1);
@@ -121,6 +137,10 @@ public class main_6 {
 
         //Inserting a node at the given position
         obj.insert(200,3);
+        obj.printLL();
+
+        //Deleting the middle node of singly linked list
+        obj.deleteMiddleNode();
         obj.printLL();
     }
 }
